@@ -43,6 +43,19 @@ button {
   padding: 30px;
 }
 
+.App-footer {
+  background-color: #282c34;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  text-align: right;
+  font-size: 10px;
+  padding-right: 10px;
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -56,7 +69,7 @@ button {
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgba(0,0,0, 0.8);
 }
 
 .popup_inner {
@@ -65,9 +78,68 @@ button {
   position: absolute;
   left: 25%;
   right: 25%;
-  top: 30%;
-  bottom: 30%;
+  top: 25%;
+  bottom: 25%;
   margin: auto;
-  padding: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: white;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.greentext {
+  font-weight: bold;
+  color: green;
+}
+
+.redtext {
+  font-weight: bold;
+  color: red;
+}
+
+.greentext-large {
+  font-weight: bold;
+  color: green;
+  font-size: 26px;
+}
+
+.redtext-large {
+  font-weight: bold;
+  color: red;
+  font-size: 26px;
+}
+
+@media only screen and (max-width: 600px) {
+  .popup_inner {
+    left: 5%;
+    right: 5%;
+    top: 10%;
+    bottom: 10%;
+  }
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+
+  .App-main{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #efefef;
+    box-shadow:
+      0 1px 1px rgba(0,0,0,0.15),
+      0 10px 0 -5px #eee,
+      0 10px 1px -4px rgba(0,0,0,0.15),
+      0 20px 0 -10px #eee,
+      0 20px 1px -9px rgba(0,0,0,0.15);
+    padding: 30px;
+  }
+
 }

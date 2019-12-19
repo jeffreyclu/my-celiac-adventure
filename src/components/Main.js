@@ -3,6 +3,7 @@ import MainHeader from './MainHeader'
 import MainImage from './MainImage'
 import MainButtons from './MainButtons'
 import ShowMessage from './ShowMessage'
+import Footer from './Footer'
 
 class Main extends React.Component {
     constructor() {
@@ -11,12 +12,13 @@ class Main extends React.Component {
             start: false,
             showMessage: true,
             days: 7,
-            day: 0,
+            day: 1,
             meal: ["Breakfast", "Lunch", "Dinner"],
             mealIdx: 0,
             meals: 2,
             hunger: 25,
             health: 100,
+            glutenThreshold: 50,
             entrees: [
                 {
                   id: 'PRBB',
@@ -38,13 +40,13 @@ class Main extends React.Component {
                   link: "https://tasteandsee.com/wp-content/uploads/2016/10/EL-soup-swirl-good.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 50,
                       lactose: 100,
                       hunger: 5,
                       health: 3
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Tomatoes contain fructose.',
                   lactoseExplanation: 'Mozarella is a cheese and contains lactose.'
                 },
@@ -60,7 +62,7 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'Tortilla chips are made with flour and contain gluten. Cheese contains lactose.',
+                  glutenExplanation: 'Tortilla chips are made with flour and contain gluten.',
                   fructoseExplanation: 'Tomatoes contain fructose.',
                   lactoseExplanation: 'Cheese contains lactose.'
                 },
@@ -70,45 +72,48 @@ class Main extends React.Component {
                   link: "https://cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-2.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 100,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   lactoseExplanation: 'The dish is prepared with butter, which contains lactose.'
                 },
                 {
                   id: 'CPMC',
                   name: 'Chickpea Papadom with Mango Chutney',
+                  link: "http://www.thedrinksbusiness.com/wordpress/wp-content/uploads/2012/04/Poppadoms.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 100,
                       lactose: 0,
                       hunger: 5,
                       health: 3
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Mango contains high amounts of fructose.'
                 },
                 {
                   id: 'PBBR',
                   name: 'Pho in Beef Broth with Sliced Ribeye',
+                  link: "https://embed.widencdn.net/img/beef/ti0wfxoyxn/1120x840px/pho-beef-noodle-soup-square.tif?keep=c&u=7fueml",
                   attributes:
                     {
-                      gluten: 20,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 0,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.'
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
                 },
                 {
                   id: 'BWFF',
                   name: 'Buffalo Chicken Wings with French Fries',
+                  link: "https://woodstonepizzeria.com/wp-content/uploads/2015/07/StoneFire-Pizza-0806-2.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -122,34 +127,37 @@ class Main extends React.Component {
                 {
                   id: 'SPGC',
                   name: "Shepherd's Pie with Grated Cheddar",
+                  link: "https://images-gmi-pmc.edge-generalmills.com/4d3f02e9-4cd7-4a31-9169-f48192d7e468.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 100,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   lactoseExplanation: 'Cheddar is a cheese and contains lactose.'
                 },
                 {
                   id: 'CHMV',
                   name: 'Chongqing Hotpot with Raw Meat and Vegetables',
+                  link: "http://www.beijing-visitor.com/images/content_images/chongqing-hotpot-1.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 50,
                       lactose: 0,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Some of the vegetables contain fructose.'
                 },
                 {
                   id: 'PDSP',
                   name: 'Peking Duck, sans Pancakes',
+                  link: "https://cdn.theculturetrip.com/wp-content/uploads/2016/12/4103966297_1985a99850_b-1024x768.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -164,6 +172,7 @@ class Main extends React.Component {
                 {
                   id: 'BBCG',
                   name: 'Beef Burrito with Cheese and Guacamole',
+                  link: "https://www.alsothecrumbsplease.com/wp-content/uploads/2018/01/Guacamole-Beef-Burrito-5.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -179,20 +188,22 @@ class Main extends React.Component {
                 {
                   id: 'TPCT',
                   name: 'Tacos al Pastor with Corn Tortilla',
+                  link: "https://www.dinneratthezoo.com/wp-content/uploads/2019/04/tacos-al-pastor-6.jpg",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 50,
                       lactose: 0,
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Pineapple contains fructose.',
                 },
                 {
                   id: 'CQSV',
                   name: 'Chicken Quesadilla with Salsa Verde',
+                  link: "https://www.tastesoflizzyt.com/wp-content/uploads/2019/04/salsa-verde-chicken-quesadilla-7.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -201,7 +212,7 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Tomatillos contain fructose.',
                   lactoseExplanation: 'Quesadillas contain cheese, which contain lactose.'
                 },
@@ -210,26 +221,26 @@ class Main extends React.Component {
                   name: 'Veal Saltimbocca with Prosciutto and Sage',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 0,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                 },
                 {
                   id: 'GSBS',
                   name: 'Gnocchi with Sage and Butter Sauce',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 100,
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   lactoseExplanation: 'Butter contains lactose.'
                 },
                 {
@@ -237,13 +248,13 @@ class Main extends React.Component {
                   name: 'Chicken Marsala with Steamed Vegetables',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 50,
                       lactose: 0,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Some of the vegetables contain fructose.'
                 },
                 {
@@ -251,13 +262,13 @@ class Main extends React.Component {
                   name: 'Chicken Alfredo with Gluten-Free Penne',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 100,
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   lactoseExplanation: 'Alfredo sauce uses both cream and cheese, which contain lactose.'
                 },
                 {
@@ -265,28 +276,28 @@ class Main extends React.Component {
                   name: 'Cold Rice with Apple and Raisins',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 100,
                       lactose: 0,
                       hunger: 5,
                       health: 3
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Apples contain high amounts of fructose.',
-                  note: 'This is an actual item served on United Flights. Entirely inedible.'
+                  note: 'Fun note: this is an actual item served on United Flights. Entirely inedible.'
                 },
                 {
                   id: 'TPRC',
                   name: 'Two Plain Crispy Rice Cakes',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 0,
                       hunger: 5,
                       health: 3
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.'
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
                 },
                 {
                   id: 'CCCS',
@@ -333,27 +344,27 @@ class Main extends React.Component {
                   name: "Sashimi Plate - Chef's Choice",
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 0,
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.'
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
                 },
                 {
                   id: 'BCBP',
                   name: 'Baked Chicken with Boiled Potato',
                   attributes:
                     {
-                      gluten: 10,
+                      gluten:  this.randomNumber(1,100),
                       fructose: 0,
                       lactose: 0,
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.',
-                  note: 'This meal is extremely bland.'
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                  note: 'Fun note: this meal is extremely bland.'
                 },
                 {
                   id: 'BCBP',
@@ -366,7 +377,7 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared on a common griddle and suffered from cross-contamination as a result.'
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
                 }
               ],
               entreeSelection: ""        
@@ -376,133 +387,142 @@ class Main extends React.Component {
         this.skipMeal = this.skipMeal.bind(this)
     }
 
+    randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min
+    }
+
     eatMeal() {
         this.showMessage()
+        const glutenFreeMessage = `Yay, the meal was free of gluten! You enjoyed the meal safely 
+            and reduced your hunger points by ${this.state.entreeSelection.attributes.hunger}.`
+        const glutenMessage = `Oh no, the meal contained gluten! You gained 
+            ${this.state.entreeSelection.attributes.hunger} hunger points.`
         this.setState(prevState => {
-            //evaluate if day is less than days and hunger is less than 100
-            if(this.state.day < this.state.days && this.state.hunger < 100) {
+            //is current day less than total days
+            if(this.state.day < this.state.days) {
 
-                //evaluate if meals is less than meals and hunger is still less than 100
-                if (this.state.mealIdx < this.state.meals && this.state.hunger < 100) {
-
-                    if (this.state.entreeSelection.attributes.gluten !== 100) {
-                        return {
-                            mealIdx: prevState.mealIdx + 1,
-                            entreeSelection: prevState.entrees.shift(),
-                            message: "Yay, the meal contained no gluten! You ate the meal safely and reduced your hunger points.",
-                            hunger: prevState.hunger - this.state.entreeSelection.attributes.hunger
-                        }
-                    }
+                //is current meal ID less than total meals in a day
+                if (this.state.mealIdx < this.state.meals) {
                     
-                    else {
+                    //check for gluten
+                    if (this.state.entreeSelection.attributes.gluten < this.state.glutenThreshold) {
                         return {
                             mealIdx: prevState.mealIdx + 1,
-                            entreeSelection: prevState.entrees.shift(),
-                            message: "Oh no, the meal contained gluten! You gained hunger points as a result.",
+                            message: glutenFreeMessage,
+                            hunger: prevState.hunger - this.state.entreeSelection.attributes.hunger
+                        }
+                    }
+                    //dish is not gluten free
+                    else {
+                        return {
+                            mealIdx: prevState.mealIdx + 1, 
+                            message: glutenMessage,
                             hunger: prevState.hunger + this.state.entreeSelection.attributes.hunger
                         }
                     }
                 }
-                //if id of meal is greater than meals, then reset meals
-                else if (this.state.mealIdx >= this.state.meals){
 
-                    if (this.state.entreeSelection.attributes.gluten !== 100) {
+                //if id of current meal is greater than total number of meals, then reset meals
+                else {
+                    
+                    //check for gluten
+                    if (this.state.entreeSelection.attributes.gluten < this.state.glutenThreshold) {
                         return {
                             day: prevState.day + 1,
                             mealIdx: 0,
-                            entreeSelection: prevState.entrees.shift(),
-                            message: "Yay, the meal contained no gluten! You ate the meal safely and reduced your hunger points.",
+                            message: glutenFreeMessage,
                             hunger: prevState.hunger - this.state.entreeSelection.attributes.hunger
                         }
                     }
 
+                    //dish is not gluten free
                     else {
                         return {
                             day: prevState.day + 1,
                             mealIdx: 0,
-                            entreeSelection: prevState.entrees.shift(),
-                            message: "Oh no, the meal contained gluten! You gained hunger points as a result.",
+                            message: glutenMessage,
                             hunger: prevState.hunger + this.state.entreeSelection.attributes.hunger
                         }
-                    }
-                }
-
-                //evaluate if hunger = 100
-                else {
-                    return {
-                        message: "You are dead!"
                     }
                 }
             }
             //the last day
             else {
-                if (this.state.mealIdx < this.state.meals && this.state.hunger < 100) {
-                    return {
-                        mealIdx: prevState.mealIdx + 1,
-                        entreeSelection: prevState.entrees.shift()
+
+                //is current meal ID less than total meals in a day 
+                if (this.state.mealIdx < this.state.meals) {
+
+                    //check for gluten
+                    if (this.state.entreeSelection.attributes.gluten < this.state.glutenThreshold) {
+                        return {
+                            mealIdx: prevState.mealIdx + 1,
+                            message: glutenFreeMessage,
+                            hunger: prevState.hunger - this.state.entreeSelection.attributes.hunger
+                        }
+                    }
+
+                    //dish is not gluten free
+                    else {
+                        return {
+                            mealIdx: prevState.mealIdx + 1, 
+                            message: glutenMessage,
+                            hunger: prevState.hunger + this.state.entreeSelection.attributes.hunger
+                        }
                     }
                 }
-                else if (this.state.mealIdx === this.state.meals && this.state.hunger < 100) {
-                    return {
-                        message: "YOU WON!!!!"
-                    }
-                }
-                //evaluate if hunger = 100
+
+                //last meal
                 else {
                     return {
-                        message: "You are dead!"
+                        message: "YOU WON!!!",
                     }
                 }
             }
-        })
-            
+        })    
     }
 
     skipMeal() {
         this.showMessage()
+        const skipMessage = `You skipped the meal and gained ${this.randomNumber(5,10)} hunger points. You are getting hungry!`
         this.setState(prevState => {
+
             //evaluate if day is less than days and hunger is greater than 0
-            if(this.state.day > 0 && this.state.day < this.state.days && this.state.hunger < 100) {
+            if(this.state.day < this.state.days) {
+
                 //evaluate if meals is less than meals and hunger is less than 100
-                if (this.state.mealIdx < this.state.meals && this.state.hunger < 100) {
+                if (this.state.mealIdx < this.state.meals) {
                     return {
                         mealIdx: prevState.mealIdx + 1,
-                        entreeSelection: prevState.entrees.shift(),
-                        hunger: prevState.hunger + 15,
-                        message: "You skipped the meal and gained 15 hunger points. You are getting hungry!"
+                        entreeSelection: {attributes: {gluten: 100}},
+                        hunger: prevState.hunger + this.randomNumber(5,15),
+                        message: skipMessage
                     }
                 }
                 //if meals is greater than meals, then reset meals
-                else if (this.state.mealIdx >= this.state.meals){
+                else {
                     return {
                         day: prevState.day + 1,
                         mealIdx: 0,
-                        entreeSelection: prevState.entrees.shift(),
-                        hunger: prevState.hunger + 15,
-                        message: "You skipped the meal and gained 15 hunger points. You are getting hungry!"
-                    }
-                }
-                //evaluate if hunger = 100
-                else {
-                    return {
-                        message: "You are dead!"
+                        entreeSelection: {attributes: {gluten: 100}},
+                        hunger: prevState.hunger + this.randomNumber(5,15),
+                        message: skipMessage
                     }
                 }
             }
             //the last day
             else {
-                if (this.state.day > 0 && this.state.mealIdx < this.state.meals && this.state.hunger < 100) {
+                if (this.state.mealIdx < this.state.meals) {
                     return {
                         mealIdx: prevState.mealIdx + 1,
-                        entreeSelection: prevState.entrees.shift(),
-                        hunger: prevState.hunger + 15,
-                        message: "You skipped the meal and gained 15 hunger points. You are getting hungry!"
+                        entreeSelection: {attributes: {gluten: 100}},
+                        hunger: prevState.hunger + this.randomNumber(5,15),
+                        message: skipMessage
                     }
                 }
                 //evaluate if hunger = 100
                 else {
                     return {
-                        message: "You are dead!"
+                        message: "You WON!!!"
                     }
                 }
             }
@@ -513,6 +533,23 @@ class Main extends React.Component {
         this.setState({
             showMessage: !this.state.showMessage,
           });
+    }
+
+    closeMessage() {
+        this.setState(prevState => {
+            if (prevState.hunger < 100) {
+                return {
+                    showMessage: !prevState.showMessage,
+                    entreeSelection: prevState.entrees.shift()
+                }
+            }
+
+            else {
+                return {
+                    message: "You are dead!"
+                }
+            }
+        })
     }
 
     startGame() {
@@ -540,18 +577,16 @@ class Main extends React.Component {
                 <MainButtons 
                     eatMeal={this.eatMeal}
                     skipMeal={this.skipMeal}
-                    showMessage={this.showMessage}
                     data={this.state}/>
                 {this.state.showMessage ? 
                 <ShowMessage
                     text='Message'
-                    closeMessage={this.showMessage.bind(this)}
+                    closeMessage={this.closeMessage.bind(this)}
                     startGame={this.startGame.bind(this)}
                     resetGame={this.resetGame}
                     data={this.state}
                 />
-          : null
-        }
+          : null}
             </div>
         )
     }
