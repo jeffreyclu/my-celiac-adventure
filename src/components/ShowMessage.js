@@ -1,6 +1,7 @@
 import React from 'react'
 import StartMessage from './StartMessage'
 import StartButton from './StartButton'
+import MainMessage from './MainMessage'
 
 function ShowMessage(props) {
 
@@ -18,10 +19,19 @@ function ShowMessage(props) {
         </div>) : 
 
         (<div>
-            <p className={props.data.entreeSelection.attributes.gluten >= props.data.glutenThreshold ? "redtext-large" : "greentext-large"}>{props.data.message}</p>
-            <p>{props.data.entreeSelection.attributes.gluten >= props.data.glutenThreshold ? props.data.entreeSelection.glutenExplanation : null}</p>
-            <p>{props.data.entreeSelection.note ? props.data.entreeSelection.note : null}</p>
-        <p>{props.data.entreeSelection.name}{props.data.entreeSelection.attributes.gluten}{props.data.glutenThreshold}</p>
+            <MainMessage 
+                gluten={props.data.entreeSelection.attributes.gluten}
+                glutenThreshold={props.data.glutenThreshold}
+                glutenExplanation={props.data.entreeSelection.glutenExplanation}
+                message={props.data.message}
+                note={props.data.entreeSelection.note}
+                days={props.data.days}
+                day={props.data.day}
+                meals={props.data.meals}
+                meal={props.data.meal}
+                hunger={props.data.hunger}
+            />
+        {/* <p>{props.data.entreeSelection.name}{props.data.entreeSelection.attributes.gluten}{props.data.glutenThreshold}</p> */}
             <button onClick={props.closeMessage}>Continue</button>
         </div>)}
         <p>Your current hunger: {props.data.hunger}/100</p>

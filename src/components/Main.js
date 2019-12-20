@@ -3,7 +3,6 @@ import MainHeader from './MainHeader'
 import MainImage from './MainImage'
 import MainButtons from './MainButtons'
 import ShowMessage from './ShowMessage'
-import Footer from './Footer'
 
 class Main extends React.Component {
     constructor() {
@@ -108,7 +107,8 @@ class Main extends React.Component {
                       hunger: 15,
                       health: 9
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                  note: 'Pho noodles are usually made from rice and gluten free, but make sure to ask the Chef to prepare the dish in a separate area!'
                 },
                 {
                   id: 'BWFF',
@@ -152,7 +152,8 @@ class Main extends React.Component {
                       health: 9
                     },
                   glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
-                  fructoseExplanation: 'Some of the vegetables contain fructose.'
+                  fructoseExplanation: 'Some of the vegetables contain fructose.',
+                  note: 'Even if the raw ingredients are naturally gluten free, make sure that they were prepped in a separate area!'
                 },
                 {
                   id: 'PDSP',
@@ -167,7 +168,8 @@ class Main extends React.Component {
                       health: 5
                     },
                   glutenExplanation: 'The sauce used in Peking Duck contains soy sauce, which contains gluten.',
-                  fructoseExplanation: 'The dipping sauce may contain fructose.'
+                  fructoseExplanation: 'The dipping sauce may contain fructose.',
+                  note: "As with many Chinese dishes, it is very hard to find a gluten free version of Peking Duck."
                 },
                 {
                   id: 'BBCG',
@@ -212,13 +214,15 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                  glutenExplanation: 'Tortilla is made with flour and contains gluten.',
                   fructoseExplanation: 'Tomatillos contain fructose.',
-                  lactoseExplanation: 'Quesadillas contain cheese, which contain lactose.'
+                  lactoseExplanation: 'Quesadillas contain cheese, which contain lactose.',
+                  note: 'Even if the tortilla is corn based, Quesadillas are often prepared on a common griddle and can suffer from cross-contamination.'
                 },
                 {
                   id: 'VSPS',
                   name: 'Veal Saltimbocca with Prosciutto and Sage',
+                  link: "https://www.insidetherustickitchen.com/wp-content/uploads/2019/04/Veal-Saltimbocca-740px-x-Inside-The-Rustic-Kitchen-1.jpg",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -231,7 +235,8 @@ class Main extends React.Component {
                 },
                 {
                   id: 'GSBS',
-                  name: 'Gnocchi with Sage and Butter Sauce',
+                  name: 'Potato Gnocchi with Sage & Butter Sauce',
+                  link: "https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18140844/051090064_01-main.jpg",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -241,11 +246,13 @@ class Main extends React.Component {
                       health: 5
                     },
                   glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
-                  lactoseExplanation: 'Butter contains lactose.'
+                  lactoseExplanation: 'Butter contains lactose.',
+                  link: "Even if the gnocchi itself is gluten free, always ask the Chef to prepare it in a separate area!"
                 },
                 {
                   id: 'CMSV',
                   name: 'Chicken Marsala with Steamed Vegetables',
+                  link: "https://www.yummyhealthyeasy.com/wp-content/uploads/2019/02/chicken-marsala-recipe-4.jpg",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -260,6 +267,7 @@ class Main extends React.Component {
                 {
                   id: 'CAGP',
                   name: 'Chicken Alfredo with Gluten-Free Penne',
+                  link: "https://images-gmi-pmc.edge-generalmills.com/44106c3e-8964-4a26-aa76-4a0e66a01972.jpg",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -269,7 +277,8 @@ class Main extends React.Component {
                       health: 9
                     },
                   glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
-                  lactoseExplanation: 'Alfredo sauce uses both cream and cheese, which contain lactose.'
+                  lactoseExplanation: 'Alfredo sauce uses both cream and cheese, which contain lactose.',
+                  note: 'Even if the pasta is gluten free, always ask the Chef to prepare it using a separate pot!'
                 },
                 {
                   id: 'CRAR',
@@ -284,11 +293,12 @@ class Main extends React.Component {
                     },
                   glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
                   fructoseExplanation: 'Apples contain high amounts of fructose.',
-                  note: 'Fun note: this is an actual item served on United Flights. Entirely inedible.'
+                  note: 'This is an actual item served on United Flights. Entirely inedible.'
                 },
                 {
                   id: 'TPRC',
                   name: 'Two Plain Crispy Rice Cakes',
+                  link : "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/are-rice-cakes-healthy-1296x728-feature.jpg?w=1155&h=1528",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -297,11 +307,13 @@ class Main extends React.Component {
                       hunger: 5,
                       health: 3
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                  note: 'Check the label to see if it is made in a gluten-free facility!'
                 },
                 {
                   id: 'CCCS',
                   name: 'Classic Chicken Caesar Salad',
+                  link: "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2018/05/caesar-salad.jpg?itok=cNYFcr8y",
                   attributes:
                     {
                       gluten: 100,
@@ -316,6 +328,7 @@ class Main extends React.Component {
                 {
                   id: 'MSGD',
                   name: 'Miso Soup and Salad with Ginger Dressing',
+                  link: "https://s3-media3.fl.yelpcdn.com/bphoto/ybnmM39cSzP76QFCyJdcjA/o.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -329,6 +342,7 @@ class Main extends React.Component {
                 {
                   id: 'STGS',
                   name: 'Spicy Tuna Roll with Gluten-Free Soy Sauce',
+                  link: "https://pickledplum.com/wp-content/uploads/2018/01/spicy-tuna-roll-horizontal.jpg",
                   attributes:
                     {
                       gluten: 100,
@@ -337,24 +351,13 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'Sushi rice contains rice vinegar, which contains gluten.'
+                  glutenExplanation: 'Sushi rice contains rice vinegar, which contains gluten.',
+                  note: "You can't assume sushi is gluten free - in fact most of the time the opposite is true!"
                 },
                 {
                   id: 'SPCC',
                   name: "Sashimi Plate - Chef's Choice",
-                  attributes:
-                    {
-                      gluten:  this.randomNumber(1,100),
-                      fructose: 0,
-                      lactose: 0,
-                      hunger: 10,
-                      health: 5
-                    },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
-                },
-                {
-                  id: 'BCBP',
-                  name: 'Baked Chicken with Boiled Potato',
+                  link: "https://lasvegas-sushi.com/wp-content/uploads/2018/04/OSAKA-Sashimi-8-845x684.jpg",
                   attributes:
                     {
                       gluten:  this.randomNumber(1,100),
@@ -364,11 +367,26 @@ class Main extends React.Component {
                       health: 5
                     },
                   glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
-                  note: 'Fun note: this meal is extremely bland.'
+                  note: 'Did you know that "wasabi" commonly served in the US is usually just processed horseradish, and often not gluten-free? Always ask!'
                 },
                 {
                   id: 'BCBP',
-                  name: 'Fried Bacon with Hash Browns',
+                  name: 'Roast Chicken with Baked Potatoes',
+                  link: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/10/2/1/FNM_110112-Garlic-and-Chicken-Potatoes-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1382456485753.jpeg",
+                  attributes:
+                    {
+                      gluten:  this.randomNumber(1,100),
+                      fructose: 0,
+                      lactose: 0,
+                      hunger: 10,
+                      health: 5
+                    },
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                },
+                {
+                  id: 'BEHB',
+                  name: 'Fried Bacon and Egg with Hash Browns',
+                  link: 'https://www.fifteenspatulas.com/wp-content/uploads/2019/07/Hash-Browns-Fifteen-Spatulas-12.jpg',
                   attributes:
                     {
                       gluten: 100,
@@ -377,7 +395,8 @@ class Main extends React.Component {
                       hunger: 10,
                       health: 5
                     },
-                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :('
+                  glutenExplanation: 'The dish was prepared in a common area and suffered from cross-contamination :(',
+                  note: 'A diner favorite - but always ask that it be prepared in a separate area!'
                 }
               ],
               entreeSelection: ""        
@@ -393,7 +412,7 @@ class Main extends React.Component {
 
     eatMeal() {
         this.showMessage()
-        const glutenFreeMessage = `Yay, the meal was free of gluten! You enjoyed the meal safely 
+        const glutenFreeMessage = `Phew, the meal was free of gluten! You enjoyed the meal safely 
             and reduced your hunger points by ${this.state.entreeSelection.attributes.hunger}.`
         const glutenMessage = `Oh no, the meal contained gluten! You gained 
             ${this.state.entreeSelection.attributes.hunger} hunger points.`
