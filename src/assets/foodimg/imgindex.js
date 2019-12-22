@@ -1,0 +1,28 @@
+const imgindex = [
+    // { id: '', src: './.jpg'},
+    { id: 'PRBB', src: './PRBB.jpg'},
+    { id: 'TSWM', src: './TSWM.jpg'},
+    { id: 'TCGT', src: './TCGT.png'},
+    { id: 'CPPC', src: './CPPC.jpg'},
+    { id: 'PBBR', src: './PBBR.jpg'},
+    { id: 'BWFF', src: './BWFF.jpg'},
+    { id: 'SPGC', src: './SPGC.jpg'},
+    { id: 'CHMV', src: './CHMV.jpg'},
+    { id: 'PDSP', src: './PDSP.jpg'},
+    { id: 'BBCG', src: './BBCG.jpg'},
+    { id: 'CQSV', src: './CQSV.jpg'},
+    { id: 'VSPS', src: './VSPS.jpg'},
+    { id: 'GSBS', src: './GSBS.jpg'},
+    { id: 'CMSV', src: './CMSV.jpg'},
+    { id: 'CAGP', src: './CAGP.jpg'},
+    { id: 'CRAR', src: './CRAR.jpg'},
+    { id: 'TPRC', src: './TPRC.jpg'},
+    { id: 'CCCS', src: './CCCS.jpg'},
+    { id: 'MSGD', src: './MSGD.jpg'},
+    { id: 'STGS', src: './STGS.jpg'},
+    { id: 'SPCC', src: './SPCC.jpg'},
+    { id: 'BCBP', src: './BCBP.jpg'},
+    { id: 'FBAE', src: './FBAE.jpg'},
+  ];
+  
+  export default imgindex;

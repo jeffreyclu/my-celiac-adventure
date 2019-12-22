@@ -1,17 +1,24 @@
 button {
   background-color: #4CAF50; /* Green */
-  border: none;
+  border: grey;
   color: white;
-  margin: 10px;
-  padding: 15px 32px;
+  margin: 2px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  width: 25%;
 }
 
 meter {
-  height: 5%;
+  height: 10px;
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+}
+
+hr {
   width: 50%;
 }
 
@@ -65,6 +72,10 @@ meter {
   color: #61dafb;
 }
 
+.App-buttons {
+  width: 100%;
+}
+
 .popup {
   position: fixed;
   width: 100%;
@@ -77,7 +88,7 @@ meter {
   background-color: rgba(0,0,0, 0.8);
 }
 
-.popup_inner {
+.popup-inner {
   border-radius: 25px;
   box-shadow: 5px 10px 100px;
   position: absolute;
@@ -91,10 +102,39 @@ meter {
   padding-top: 20px;
   padding-bottom: 20px;
   background: white;
+  /* display: flex;
+  flex-flow: row wrap; */
 }
 
-.justified {
-  text-align: justify;
+.popup-header {
+  margin: auto;
+}
+
+.popup-text {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.popup-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.popup-stats {
+  margin: auto;
+  margin-top: 20px;
+}
+
+.float-left {
+  float: left;
+  width: 45%;
+}
+
+.float-right {
+  float: right;
+  width: 45%;
 }
 
 .greentext {
@@ -120,6 +160,7 @@ meter {
 }
 
 .note {
+  margin: 30px;
   color: grey;
   font-style: italic;
 }
@@ -130,20 +171,18 @@ meter {
     height: auto;
   }
 
-  meter {
-    height: 5%;
-    width: 60%;
+  button {
+    width: 45%;
   }
 
-  .popup_inner {
-    left: 5%;
-    right: 5%;
-    top: 10%;
-    bottom: 10%;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  meter {
+    margin-top: 20px;
+    height: 12px;
+    width: 100%;
+  }
+
+  hr {
+    width: 100px;
   }
 
   .App-main{
@@ -158,7 +197,92 @@ meter {
       0 10px 1px -4px rgba(0,0,0,0.15),
       0 20px 0 -10px #eee,
       0 20px 1px -9px rgba(0,0,0,0.15);
-    padding: 0px;
+    padding: 30px;
+  }
+
+  .popup-inner {
+    left: 5%;
+    right: 5%;
+    top: 8%;
+    bottom: 8%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: lig;
+    /* display: flex;
+    flex-flow: row wrap; */
+  }
+
+  .popup-header{
+    margin: auto;
+  }
+
+  .popup-text {
+    text-align: left;
+    margin: auto;
+  }
+
+  .popup-button {
+    margin-top: 20px;
+  }
+
+  .popup-stats {
+    margin-top: 20px;
+  }
+
+  .float-left {
+    width: 40%;
+  }
+
+  .float-right {
+    width: 40%
+  }
+
+  .note {
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
   }
 
 }
+
+
+/* .healthBar {
+  width: 100%;
+  height: 20px;
+  border: 2px #ccc solid;
+}
+
+.healthSection {
+  display: inline-block;
+  height: 20px;
+  font-size: 10pt;
+  vertical-align: top;
+  text-align: center;
+}
+
+.healthSection p {
+  margin: 0;
+  padding: 3px;
+  color: grey;
+}
+
+.damage {
+  background-color: red;
+  float: left;
+  opacity: 0;
+  animation: fadeout 2s;
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.health {
+  float: left;
+  background-color: lightgreen;
+} */
