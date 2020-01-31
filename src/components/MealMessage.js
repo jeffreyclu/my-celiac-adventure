@@ -17,12 +17,18 @@ function MealMessage(props) {
                     <p>{props.data.entreeSelection.attributes.gluten >= props.data.glutenThreshold && !props.data.skipped ? 
                         props.data.entreeSelection.glutenExplanation : null}
                     </p>
-                    {/* <p>{props.data.hardMode && props.data.entreeSelection.attributes.lactose >= props.data.lactoseThreshold && !props.data.skipped ? 
+                    <p>{props.data.hardMode && props.data.entreeSelection.attributes.lactose >= props.data.lactoseThreshold && !props.data.skipped ? 
                         props.data.message2 : null}
                     </p>
                     <p>{props.data.hardMode && props.data.entreeSelection.attributes.lactose >= props.data.lactoseThreshold && !props.data.skipped ? 
                         props.data.entreeSelection.lactoseExplanation : null}
-                    </p> */}
+                    </p>
+                    <p>{props.data.extremeMode && props.data.entreeSelection.attributes.fructose >= props.data.fructoseThreshold && !props.data.skipped ? 
+                        props.data.message3 : null}
+                    </p>
+                    <p>{props.data.extremeMode && props.data.entreeSelection.attributes.fructose >= props.data.fructoseThreshold && !props.data.skipped ? 
+                        props.data.entreeSelection.fructoseExplanation : null}
+                    </p>
                     <p>{props.data.entreeSelection.attributes.gluten < props.data.glutenThreshold && !props.data.skipped ? 
                         <div>
                             {props.data.entreeSelection.attributes.hunger < 10 ? "It wasn't very filling." : "It was pretty filling!"}

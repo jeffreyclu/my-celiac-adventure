@@ -406,7 +406,6 @@ const Data =
       fructoseExplanation: 'Tomatoes contain fructose.',
       lactoseExplanation: 'Cheese contains lactose.'
     },
-    ,
     {
       id: 'CSSD',
       name: 'Classic Shanghai Soup Dumplings',

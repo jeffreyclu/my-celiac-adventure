@@ -1,6 +1,5 @@
 button {
-  background-color: #4CAF50; /* Green */
-  border: grey;
+  background-color: #4CAF50;
   color: white;
   margin: 2px;
   padding: 15px;
@@ -8,7 +7,18 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 25%;
+  width: 20%;
+  box-shadow: 0 5px #666;
+}
+
+img {
+  width: 600px;
+  height: auto;
+}
+
+button:hover {
+  box-shadow: 0 1px #666;
+  transform: translateY(3px);
 }
 
 meter {
@@ -172,7 +182,12 @@ hr {
   }
 
   button {
-    width: 45%;
+    width: 40%;
+    box-shadow: none;
+  }
+
+  button:hover {
+    transform: none;
   }
 
   meter {

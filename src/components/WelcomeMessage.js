@@ -23,9 +23,9 @@ function WelcomeMessage(props) {
             <hr />
 
             <div className="popup-button">
-                <button onClick={props.startGame}>Let's go!</button>
-                {/* <button onClick={props.hardMode}>Hard Mode</button>
-                <button onClick={props.extremeMode}>Extreme Mode</button> */}
+                <button onClick={props.startGame}>Easy Mode</button>
+                <button onClick={props.hardMode}>Hard Mode</button>
+                <button onClick={props.extremeMode}>Extreme Mode</button>
             </div>
 
             <div className="popup-stats">

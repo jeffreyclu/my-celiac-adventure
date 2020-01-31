@@ -44,8 +44,6 @@ class Main extends React.Component {
             lactoseThreshold: 50,
             fructoseThreshold: 50,
             entreeSelection: "",
-            glutenDmg: 0,
-            totalDmg: 0,
             glutenKits: 2
         }
 
@@ -107,7 +105,6 @@ class Main extends React.Component {
                     skipped: false,
                     message: glutenFreeMessage,
                     hunger: prevState.hunger - this.state.entreeSelection.attributes.hunger,
-                    totalDmg: 0
                 }
             }
             //if dish is not gluten free then return the glutened message
@@ -117,7 +114,6 @@ class Main extends React.Component {
                     message: glutenMessage,
                     hunger: prevState.hunger + this.state.entreeSelection.attributes.hunger,
                     health: prevState.health - this.state.entreeSelection.attributes.health,
-                    totalDmg: this.state.entreeSelection.attributes.health
                 }
             }
         })
@@ -126,22 +122,21 @@ class Main extends React.Component {
     //check lactose (only in hard mode)
     lactoseCheck() {
         //message constant
-        const lactoseMessage = `Ugh, but it also had lactose. You lost 2 more health.`
+        const lactoseMessage = `Ugh, it also had lactose. You lost 2 more health.`
         //change state based on fructose check result
         this.setState(prevState => {
             //check if dish has lactose
             if (this.state.entreeSelection.attributes.lactose >= this.state.lactoseThreshold) {
                 return {
                     skipped: false,
-                    message2: lactoseMessage,
+                    message: prevState.message + " " + lactoseMessage,
                     health: prevState.health - this.state.lactoseDmg,
-                    totalDmg: prevState.totalDmg + this.state.lactoseDmg
                 }
-            }
+         }
             else {
                 return {
                     skipped: false,
-                    totalDmg: 0}
+                }
             }
         })
 
@@ -150,22 +145,20 @@ class Main extends React.Component {
     //check fructose (only in extreme mode)
     fructoseCheck() {
         //message constant
-        const fructoseMessage = `Yikes, it had fructose too?! You also lost 1 more health.`
+        const fructoseMessage = `Yikes, it had fructose. You lost 1 more health.`
         //change state based on fructose check result
         this.setState(prevState => {
             //check if dish has fructose
             if (this.state.entreeSelection.attributes.fructose >= this.state.fructoseThreshold) {
                 return {
                     skipped: false,
-                    message3: fructoseMessage,
+                    message: prevState.message + " " + fructoseMessage,
                     health: prevState.health - this.state.fructoseDmg,
-                    totalDmg: prevState.totalDmg + this.state.fructoseDmg
                 }
             }
             else {
                 return {
                     skipped: false,
-                    totalDmg: 0
                 }
             }
         })
@@ -225,12 +218,12 @@ class Main extends React.Component {
     eatMeal() {
         //check for gluten
         this.glutenCheck()
-        //if hard mode, do a lactose check
-        if (this.state.hardMode) {
+        //hard mode lactose check
+        if (this.hardMode){
             this.lactoseCheck()
         }
-        //if extreme mode, do a fructose check
-        if (this.state.extremeMode) {
+        //hard mode lactose check
+        if (this.extremeMode){
             this.fructoseCheck()
         }
         //show the popup
@@ -256,7 +249,7 @@ class Main extends React.Component {
         this.glutenKitMessage()
     }
 
-    //popup after eating or skipping meal
+    //popup after gluten kit
     glutenKitMessage() {
         this.setState({
             glutenKitMessage: !this.state.glutenKitMessage
@@ -311,8 +304,9 @@ class Main extends React.Component {
         this.changeMeal()
         //close the popup
         this.setState({
-            mealMessage: !this.state.mealMessage,
-          });
+            mealMessage: !this.state.mealMessage
+        })
+
     }
 
     //reset the game
